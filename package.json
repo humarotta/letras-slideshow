@@ -5,6 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "lint": "biome check .",
+    "format": "biome format --write .",
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
     "build": "wxt build",
