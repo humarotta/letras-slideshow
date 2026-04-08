@@ -5,18 +5,14 @@ export function hasLyrics(): boolean {
 
 export function getTitle(): string {
   const el = document.querySelector("#js-lyric-content h1");
-  if (!el) {
-    return "";
-  }
+  if (!el) return "";
 
   return el.textContent?.trim() ?? "";
 }
 
 export function getArtist(): string {
   const el = document.querySelector("#js-lyric-content h2");
-  if (!el) {
-    return "";
-  }
+  if (!el) return "";
 
   return el.textContent?.trim() ?? "";
 }
