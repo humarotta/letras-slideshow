@@ -1,3 +1,5 @@
+import type { Lyrics } from "@/types";
+
 export function hasLyrics(): boolean {
   const el = document.querySelector("#js-lyric-content .lyric-original");
   return el !== null;
@@ -35,4 +37,14 @@ export function getStanzas(): string[][] {
   }
 
   return stanzas;
+}
+
+export function getLyrics(): Lyrics | null {
+  if (!hasLyrics()) return null;
+
+  return {
+    title: getTitle(),
+    artist: getArtist(),
+    stanzas: getStanzas(),
+  };
 }
