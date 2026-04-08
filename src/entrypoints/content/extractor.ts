@@ -16,3 +16,23 @@ export function getArtist(): string {
 
   return el.textContent?.trim() ?? "";
 }
+
+export function getStanzas(): string[][] {
+  const el = document.querySelector("#js-lyric-content .lyric-original");
+  if (!el) return [];
+
+  const stanzas: string[][] = [];
+
+  for (const p of el.querySelectorAll("p")) {
+    const verses: string[] = [];
+
+    for (let line of ((p as HTMLElement).innerText || "").split("\n")) {
+      line = line.trim();
+      if (line !== "") verses.push(line);
+    }
+
+    if (verses.length > 0) stanzas.push(verses);
+  }
+
+  return stanzas;
+}
