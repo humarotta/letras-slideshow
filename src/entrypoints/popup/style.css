@@ -4,8 +4,8 @@
   --background: #ffffff;
   --text-primary: #2a2a2a;
   --text-secondary: #757575;
-  --primary: #b2c000;
-  --primary-hover: #8d9908;
+  --primary: #58a512;
+  --primary-hover: #40860e;
   --secondary: #f2f2f2;
   --secondary-hover: #e0e0e0;
   --font: "Inter", "Noto Sans", "Arial", "Roboto", sans-serif;
@@ -17,7 +17,7 @@
     --background: #0f0f0f;
     --text-primary: #e8e8e8;
     --text-secondary: #9c9c9c;
-    --primary-hover: #9aa60a;
+    --primary-hover: #4e8f13;
     --secondary: #202020;
     --secondary-hover: #303030;
   }
