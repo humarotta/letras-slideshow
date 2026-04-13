@@ -1,3 +1,9 @@
 extension:
   name: Letras Slideshow
   description: An unofficial slideshow extension for Letras.com
+
+popup:
+  loading: Detecting lyrics...
+  error: No lyrics detected
+  present: Present
+  download: Download
