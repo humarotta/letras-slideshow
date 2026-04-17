@@ -14,3 +14,9 @@ export type SongMeta = {
 export type SongLyrics = {
   stanzas: string[][];
 };
+
+export enum MessageType {
+  GetSongMeta = "GET_SONG_META",
+  StartPresentation = "START_PRESENTATION",
+  GeneratePptx = "GENERATE_PPTX",
+}
