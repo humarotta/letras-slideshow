@@ -1,6 +1,6 @@
-import type { Lyrics } from "@/types";
+import type { Song } from "@/types";
 
-export function hasLyrics(): boolean {
+export function isSongPage(): boolean {
   const el = document.querySelector("#js-lyric-content .lyric-original");
   return el !== null;
 }
@@ -39,8 +39,8 @@ export function getStanzas(): string[][] {
   return stanzas;
 }
 
-export function getLyrics(): Lyrics | null {
-  if (!hasLyrics()) return null;
+export function getSong(): Song | null {
+  if (!isSongPage()) return null;
 
   return {
     title: getTitle(),

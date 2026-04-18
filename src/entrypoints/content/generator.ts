@@ -1,5 +1,5 @@
-import type { Lyrics } from "@/types";
+import type { Song } from "@/types";
 
-export function generatePptx(lyrics: Lyrics | null) {
-  if (!lyrics) return;
+export function generatePptx(song: Song | null) {
+  if (!song) return;
 }

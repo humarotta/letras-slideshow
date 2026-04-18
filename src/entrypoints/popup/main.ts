@@ -1,5 +1,5 @@
 import { type GeneratedI18nStructure, i18n } from "#i18n";
-import type { Lyrics } from "@/types";
+import type { Song } from "@/types";
 
 function getElementById<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
@@ -17,11 +17,11 @@ async function sendToTab<T = unknown>(type: string): Promise<T | null> {
 }
 
 async function main() {
-  const lyrics = await sendToTab<Lyrics>("GET_LYRICS");
-  if (!lyrics) return setState("error");
+  const song = await sendToTab<Song>("GET_LYRICS");
+  if (!song) return setState("error");
 
-  getElementById("title").textContent = lyrics.title;
-  getElementById("artist").textContent = lyrics.artist;
+  getElementById("title").textContent = song.title;
+  getElementById("artist").textContent = song.artist;
 
   getElementById("present").addEventListener("click", () => {
     sendToTab("START_PRESENTATION");
