@@ -1,5 +1,11 @@
 import type { Song } from "@/types";
 
+enum Selector {
+  Title = "#js-lyric-content h1",
+  Artist = "#js-lyric-content h2",
+  Lyrics = "#js-lyric-content .lyric-original",
+}
+
 export function isSongPage(): boolean {
   const el = document.querySelector("#js-lyric-content .lyric-original");
   return el !== null;
