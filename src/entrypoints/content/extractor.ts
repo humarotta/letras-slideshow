@@ -6,10 +6,7 @@ enum Selector {
   Lyrics = "#js-lyric-content .lyric-original",
 }
 
-export function isSongPage(): boolean {
-  const el = document.querySelector("#js-lyric-content .lyric-original");
-  return el !== null;
-}
+export const isSongPage = (): boolean => $(Selector.Lyrics) !== null;
 
 export function getTitle(): string {
   const el = document.querySelector("#js-lyric-content h1");
