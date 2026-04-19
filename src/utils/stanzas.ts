@@ -1,5 +1,3 @@
-import { $$ } from "./selector";
-
 export function extractStanzas(container: HTMLElement): string[][] {
   const stanzas: string[][] = [];
 
