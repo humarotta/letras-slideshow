@@ -8,6 +8,9 @@ export const $$ = <T extends HTMLElement>(
   root: ParentNode = document,
 ): NodeListOf<T> => root.querySelectorAll<T>(selector);
 
+export const textOf = (element: Element): string =>
+  element?.textContent?.trim() ?? "";
+
 export function extractParagraphs(container: HTMLElement): string[][] {
   const paragraphs: string[][] = [];
 
