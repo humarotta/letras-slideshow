@@ -8,19 +8,19 @@ export const $$ = <T extends HTMLElement>(
   root: ParentNode = document,
 ): NodeListOf<T> => root.querySelectorAll<T>(selector);
 
-export function extractStanzas(container: HTMLElement): string[][] {
-  const stanzas: string[][] = [];
+export function extractParagraphs(container: HTMLElement): string[][] {
+  const paragraphs: string[][] = [];
 
   for (const p of $$("p", container)) {
-    const verses: string[] = [];
+    const lines: string[] = [];
 
     for (let line of (p.innerHTML || "").split("\n")) {
       line = line.trim();
-      if (line !== "") verses.push(line);
+      if (line !== "") lines.push(line);
     }
 
-    if (verses.length > 0) stanzas.push(verses);
+    if (lines.length > 0) paragraphs.push(lines);
   }
 
-  return stanzas;
+  return paragraphs;
 }
