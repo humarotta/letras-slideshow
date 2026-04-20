@@ -1,4 +1,4 @@
-import type { Song, SongMeta } from "@/types";
+import type { Song, SongLyrics, SongMeta } from "@/types";
 
 enum Selector {
   Title = "#js-lyric-content h1",
@@ -12,6 +12,12 @@ export function getSongMeta(): SongMeta {
   return {
     title: textOf($(Selector.Title)),
     artist: textOf($(Selector.Artist)),
+  };
+}
+
+export function getSongLyrics(): SongLyrics {
+  return {
+    stanzas: extractParagraphs($(Selector.Lyrics)),
   };
 }
 
