@@ -1,8 +1,5 @@
 import type { Song, SongLyrics, SongMeta } from "@/types";
 
-/**
- * The CSS selectors for the song elements in the Letras page.
- */
 enum Selector {
   Title = "#js-lyric-content h1",
   Artist = "#js-lyric-content h2",
