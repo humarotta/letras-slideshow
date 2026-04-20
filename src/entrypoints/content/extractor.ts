@@ -1,4 +1,4 @@
-import type { Song } from "@/types";
+import type { Song, SongMeta } from "@/types";
 
 enum Selector {
   Title = "#js-lyric-content h1",
@@ -7,6 +7,13 @@ enum Selector {
 }
 
 export const isSongPage = (): boolean => $(Selector.Lyrics) !== null;
+
+export function getSongMeta(): SongMeta {
+  return {
+    title: textOf($(Selector.Title)),
+    artist: textOf($(Selector.Artist)),
+  };
+}
 
 export function getTitle(): string {
   const el = document.querySelector("#js-lyric-content h1");
