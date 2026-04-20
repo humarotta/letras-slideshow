@@ -55,12 +55,9 @@ export function getStanzas(): string[][] {
   return stanzas;
 }
 
-export function getSong(): Song | null {
-  if (!isSongPage()) return null;
-
+export function getSong(): Song {
   return {
-    title: getTitle(),
-    artist: getArtist(),
-    stanzas: getStanzas(),
+    ...getSongMeta(),
+    ...getSongLyrics(),
   };
 }
