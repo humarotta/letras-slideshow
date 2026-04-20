@@ -1,14 +1,30 @@
-import { getSong } from "./extractor";
+import { MessageType } from "@/types";
+import { getSong, getSongMeta, isSongPage } from "./extractor";
 import { generatePptx } from "./generator";
 import { startPresentation } from "./presenter";
 
+const matchPatterns = ["*://*.letras.com/*", "*://*.letras.mus.br/*"];
+
 export default defineContentScript({
-  matches: ["*://*.letras.com/*", "*://*.letras.mus.br/*"],
+  matches: matchPatterns,
+
   main() {
     browser.runtime.onMessage.addListener((message, _, sendResponse) => {
-      if (message.type === "GET_LYRICS") sendResponse(getSong());
-      if (message.type === "START_PRESENTATION") startPresentation(getSong());
-      if (message.type === "GENERATE_PPTX") generatePptx(getSong());
+      if (!isSongPage()) return;
+
+      switch (message.type) {
+        case MessageType.GetSongMeta:
+          sendResponse(getSongMeta());
+          break;
+
+        case MessageType.StartPresentation:
+          startPresentation(getSong());
+          break;
+
+        case MessageType.GeneratePptx:
+          generatePptx(getSong());
+          break;
+      }
     });
   },
 });
