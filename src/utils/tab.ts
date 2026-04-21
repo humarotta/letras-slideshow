@@ -1,4 +1,8 @@
-export async function sendToTab<T = unknown>(type: string): Promise<T | null> {
+import type { MessageType } from "@/types";
+
+export async function sendToTab<T = unknown>(
+  type: MessageType,
+): Promise<T | null> {
   const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
   if (!tab?.id) return null;
 
