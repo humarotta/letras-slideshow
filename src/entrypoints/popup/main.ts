@@ -7,6 +7,15 @@ enum State {
   Error = "error",
 }
 
+enum Selector {
+  Popup = "#popup",
+  Title = "#title",
+  Artist = "#artist",
+  Present = "#present",
+  Download = "#download",
+  I18n = "[data-i18n]",
+}
+
 function getElementById<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
 }
