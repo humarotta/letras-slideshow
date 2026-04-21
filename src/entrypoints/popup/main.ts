@@ -16,10 +16,6 @@ enum Selector {
   I18n = "[data-i18n]",
 }
 
-function getElementById<T extends HTMLElement>(id: string): T {
-  return document.getElementById(id) as T;
-}
-
 const setState = (state: State) => ($(Selector.Popup).dataset.state = state);
 
 function localize() {
