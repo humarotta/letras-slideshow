@@ -14,12 +14,10 @@ export const isSongPage = memo(() => $(Selector.Lyrics) !== null);
 /**
  * Returns the metadata for the song on the current page.
  */
-export function getSongMeta(): SongMeta {
-  return {
-    title: textOf($(Selector.Title)),
-    artist: textOf($(Selector.Artist)),
-  };
-}
+export const getSongMeta = memo<SongMeta>(() => ({
+  title: textOf($(Selector.Title)),
+  artist: textOf($(Selector.Artist)),
+}));
 
 /**
  * Returns the lyrics for the song on the current page.
