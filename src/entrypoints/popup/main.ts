@@ -48,8 +48,8 @@ async function main() {
 }
 
 function localize() {
-  for (const el of document.querySelectorAll("[data-i18n]")) {
-    const key = el.getAttribute("data-i18n") as keyof GeneratedI18nStructure;
+  for (const el of $$(Selector.I18n)) {
+    const key = el.dataset.i18n as keyof GeneratedI18nStructure;
     el.textContent = i18n.t(key);
   }
 }
