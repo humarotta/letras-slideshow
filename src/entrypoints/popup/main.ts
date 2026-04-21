@@ -1,5 +1,5 @@
 import { type GeneratedI18nStructure, i18n } from "#i18n";
-import type { Song } from "@/types";
+import { MessageType, type SongMeta } from "@/types";
 
 enum State {
   Loading = "loading",
@@ -22,24 +22,6 @@ function getElementById<T extends HTMLElement>(id: string): T {
 
 const setState = (state: State) => ($(Selector.Popup).dataset.state = state);
 
-async function main() {
-  const song = await sendToTab<Song>("GET_LYRICS");
-  if (!song) return setState(State.Error);
-
-  getElementById("title").textContent = song.title;
-  getElementById("artist").textContent = song.artist;
-
-  getElementById("present").addEventListener("click", () => {
-    sendToTab("START_PRESENTATION");
-  });
-
-  getElementById("download").addEventListener("click", () => {
-    sendToTab("GENERATE_PPTX");
-  });
-
-  setState(State.Success);
-}
-
 function localize() {
   for (const el of $$(Selector.I18n)) {
     const key = el.dataset.i18n as keyof GeneratedI18nStructure;
@@ -47,5 +29,28 @@ function localize() {
   }
 }
 
-localize();
+async function main() {
+  try {
+    localize();
+
+    const meta = await sendToTab<SongMeta>(MessageType.GetSongMeta);
+    if (!meta) return setState(State.Error);
+
+    $(Selector.Title).textContent = meta.title;
+    $(Selector.Artist).textContent = meta.artist;
+
+    $(Selector.Present).addEventListener("click", () => {
+      sendToTab(MessageType.StartPresentation);
+    });
+
+    $(Selector.Download).addEventListener("click", () => {
+      sendToTab(MessageType.GeneratePptx);
+    });
+
+    setState(State.Success);
+  } catch {
+    setState(State.Error);
+  }
+}
+
 main();
