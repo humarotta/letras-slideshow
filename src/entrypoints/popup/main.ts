@@ -1,6 +1,12 @@
 import { type GeneratedI18nStructure, i18n } from "#i18n";
 import type { Song } from "@/types";
 
+enum State {
+  Loading = "loading",
+  Success = "success",
+  Error = "error",
+}
+
 function getElementById<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
 }
