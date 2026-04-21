@@ -22,11 +22,9 @@ export const getSongMeta = memo<SongMeta>(() => ({
 /**
  * Returns the lyrics for the song on the current page.
  */
-export function getSongLyrics(): SongLyrics {
-  return {
-    stanzas: extractParagraphs($(Selector.Lyrics)),
-  };
-}
+export const getSongLyrics = memo<SongLyrics>(() => ({
+  stanzas: extractParagraphs($(Selector.Lyrics)),
+}));
 
 /**
  * Returns the metadata and lyrics for the song on the current page.
