@@ -9,7 +9,7 @@ enum Selector {
 /**
  * Returns whether the current page is a song page.
  */
-export const isSongPage = (): boolean => $(Selector.Lyrics) !== null;
+export const isSongPage = memo(() => $(Selector.Lyrics) !== null);
 
 /**
  * Returns the metadata for the song on the current page.
