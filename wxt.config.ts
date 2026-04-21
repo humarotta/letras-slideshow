@@ -2,6 +2,7 @@ import { defineConfig } from "wxt";
 
 export default defineConfig({
   srcDir: "src",
+  entrypointsDir: "entries",
   outDir: ".out",
   modules: ["@wxt-dev/auto-icons", "@wxt-dev/i18n/module"],
   manifest: {
