@@ -29,9 +29,7 @@ export const getSongLyrics = memo<SongLyrics>(() => ({
 /**
  * Returns the metadata and lyrics for the song on the current page.
  */
-export function getSong(): Song {
-  return {
-    ...getSongMeta(),
-    ...getSongLyrics(),
-  };
-}
+export const getSong = memo<Song>(() => ({
+  ...getSongMeta(),
+  ...getSongLyrics(),
+}));
