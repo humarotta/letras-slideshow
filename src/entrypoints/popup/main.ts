@@ -20,9 +20,7 @@ function getElementById<T extends HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
 }
 
-function setState(state: "loading" | "success" | "error") {
-  getElementById("popup").dataset.state = state;
-}
+const setState = (state: State) => ($(Selector.Popup).dataset.state = state);
 
 async function sendToTab<T = unknown>(type: string): Promise<T | null> {
   const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
@@ -33,7 +31,7 @@ async function sendToTab<T = unknown>(type: string): Promise<T | null> {
 
 async function main() {
   const song = await sendToTab<Song>("GET_LYRICS");
-  if (!song) return setState("error");
+  if (!song) return setState(State.Error);
 
   getElementById("title").textContent = song.title;
   getElementById("artist").textContent = song.artist;
@@ -46,7 +44,7 @@ async function main() {
     sendToTab("GENERATE_PPTX");
   });
 
-  setState("success");
+  setState(State.Success);
 }
 
 function localize() {
