@@ -11,8 +11,8 @@ enum Selector {
   Popup = "#popup",
   Title = "#title",
   Artist = "#artist",
-  Present = "#present",
-  Download = "#download",
+  Present = "#primary",
+  Download = "#secondary",
   I18n = "[data-i18n]",
 }
 
