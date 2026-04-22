@@ -12,9 +12,28 @@
 
   /* Typography */
   --font-family: "Inter", "Noto Sans", "Arial", "Roboto", sans-serif;
+  --font-size-medium: 14px;
+  --font-size-large: 16px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
 
-  /* Utilities */
+  /* Radius */
   --border-radius: 8px;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+
+  /* Layout */
+  --popup-width: 300px;
+  --button-height: 32px;
+
+  /* Icons */
+  --icon-size: 16px;
+  --icon-present: url("@/assets/icons/present.svg");
+  --icon-download: url("@/assets/icons/download.svg");
 }
 
 @media (prefers-color-scheme: dark) {
