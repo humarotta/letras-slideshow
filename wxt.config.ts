@@ -10,4 +10,10 @@ export default defineConfig({
     description: "__MSG_extension_description__",
     default_locale: "en",
   },
+  webExt: {
+    startUrls: [
+      "https://www.letras.com/pearl-jam/30319/",
+      "https://www.letras.com/pearl-jam/30327/",
+    ],
+  },
 });
