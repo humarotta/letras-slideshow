@@ -46,3 +46,22 @@
     --color-text-secondary: #9c9c9c;
   }
 }
+
+/* Reset and base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-regular);
+  width: var(--popup-width);
+}
