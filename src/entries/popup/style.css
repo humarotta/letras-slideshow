@@ -65,3 +65,12 @@ body {
   font-weight: var(--font-weight-regular);
   width: var(--popup-width);
 }
+
+/* Popup container */
+
+#popup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+}
