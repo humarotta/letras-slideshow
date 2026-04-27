@@ -20,5 +20,10 @@
     "actions": {
       "recommended": true
     }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    }
   }
 }
