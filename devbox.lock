@@ -1,7 +1,7 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "biome@latest": {
+    "biome@2.4.9": {
       "last_modified": "2026-03-27T11:17:38Z",
       "resolved": "github:NixOS/nixpkgs/832efc09b4caf6b4569fbf9dc01bec3082a00611#biome",
       "source": "devbox-search",
