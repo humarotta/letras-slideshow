@@ -1,6 +1,6 @@
 {
   "name": "letras-slideshow",
-  "description": "An unofficial slideshow extension for Letras.com",
+  "description": "An unofficial slideshow extension for Letras",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
