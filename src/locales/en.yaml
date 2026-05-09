@@ -1,6 +1,6 @@
 extension:
   name: Letras Slideshow
-  description: An unofficial slideshow extension for Letras
+  description: An unofficial slideshow extension for Letras.
 
 popup:
   loading: Detecting lyrics...
